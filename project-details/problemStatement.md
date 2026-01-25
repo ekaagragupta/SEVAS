@@ -25,7 +25,8 @@ Tehnology stack:
 - **Anomaly detection** algorithm for suspicious patterns
 - **Time series forecasting** for risk prediction
 
-  Mechanisms :
+Mechanisms :
+
   
 Input: 6 months of satellite imagery (monthly)
       ↓
