@@ -1,1 +1,1 @@
-# LandSentinel - Deep Learning Model for Sand Mining & Land Encroachment Detection using Satellite Images
+# SEVAS: Satellite-based Environmental Violation Analysis System with LSTM-driven Predictive Intelligence and Cross-Border Network Detection
