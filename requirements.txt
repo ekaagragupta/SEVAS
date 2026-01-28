@@ -1,0 +1,26 @@
+# Core ML/AI Libraries
+tensorflow==2.15.0          # Main deep learning framework
+keras==2.15.0               # High-level API for TensorFlow
+numpy==1.24.3               # Mathematical operations on arrays
+scikit-learn==1.3.2         # ML utilities (train-test split, metrics)
+
+# Image Processing
+opencv-python==4.8.1.78     # Image manipulation (resize, filters)
+Pillow==10.1.0              # Image loading/saving
+scikit-image==0.22.0        # Advanced image processing
+rasterio==1.3.9             # Geospatial raster data (GeoTIFF files)
+
+# Vision AI APIs
+google-generativeai==0.3.1  # Google Gemini API
+openai==1.3.0               # OpenAI GPT-4 Vision API
+
+# Web Service
+flask==3.0.0                # Web framework for API
+flask-cors==4.0.0           # Allow cross-origin requests
+
+# Utilities
+python-dotenv==1.0.0        # Load environment variables
+requests==2.31.0            # HTTP requests
+geopy==2.4.1                # GPS coordinate handling
+matplotlib==3.8.2           # Visualization (for debugging)
+pandas==2.2.1               # Data manipulation and analysis
