@@ -93,4 +93,16 @@ class ImageProcessor:
                  print(f"\n...Image{i}/{len(image_paths)}...")
                  img=self.preprocess_image(path)
 
-                 if img is not None
+                 if img is not None :
+                     preprocessed_images.append(img)
+                 else:
+                     print("error")
+            if len(preprocessed_images)==0:
+                print("no image found")
+                return None
+            batch =np.array(preprocessed_images)
+            print(f"batch prep completed")
+            print(f"batch shape : {batch.shape}")
+            print(f"successful preprocessed images : {len(preprocessed_images)}/{len(image_paths)}")
+            return batch
+
