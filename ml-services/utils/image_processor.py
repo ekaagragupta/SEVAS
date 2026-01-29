@@ -84,3 +84,14 @@ class ImageProcessor:
             img_normalized=self.normalize_image(img_resized)
             print(f"value ranges from :[{img_normalized.min():.3f}]")
             return img_normalized
+    
+    #for processing multiple images at once
+    def preprocess_batch(self,image_paths):
+            print(f'batch preprocessing for {len(image_paths)}')
+            preprocessed_images=[]
+
+            for i,path in enumerate(image_paths,1):
+                 print(f"\n...Image{i}/{len(image_paths)}...")
+                 img=self.preprocess_image(path)
+
+                 if img is not None
