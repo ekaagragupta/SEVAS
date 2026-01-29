@@ -1,5 +1,4 @@
 #feeding all image processing before sending to ML model
-
 import cv2
 import numpy as np
 #Opens JPG/PNG files
