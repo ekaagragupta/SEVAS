@@ -1,7 +1,7 @@
 
 Combining **Predictive + Prioritization + Cross-Border Intelligence**
 
-## 📋 PROBLEM STATEMENT (Complete Version)
+## 📋 PROBLEM STATEMENT
 
 ### Title:
 **SEVAS: Satellite-based Environmental Violation Analysis System with LSTM-driven Predictive Intelligence and Cross-Border Network Detection**
