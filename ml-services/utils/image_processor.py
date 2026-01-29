@@ -106,3 +106,38 @@ class ImageProcessor:
             print(f"successful preprocessed images : {len(preprocessed_images)}/{len(image_paths)}")
             return batch
 
+    def save_preprocessed_comparison(self, original_path, preprocessed_array, output_path):
+        """
+        Save before/after comparison image
+        """
+        try:
+            import matplotlib.pyplot as plt
+            
+            # Load original
+            original = self.load_image(original_path)
+            
+            # Convert preprocessed back to 0-255 for display
+            # (multiply by 255 and convert to uint8)
+            preprocessed_display = (preprocessed_array * 255).astype(np.uint8)
+            
+            # Create side-by-side comparison
+            fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+            
+            # Show original
+            axes[0].imshow(original)
+            axes[0].set_title('Original Image')
+            axes[0].axis('off')
+            
+            # Show preprocessed
+            axes[1].imshow(preprocessed_display)
+            axes[1].set_title(f'Preprocessed ({self.target_size}x{self.target_size}, Normalized)')
+            axes[1].axis('off')
+            
+            plt.tight_layout()
+            plt.savefig(output_path, dpi=150, bbox_inches='tight')
+            plt.close()
+            
+            print(f" Comparison saved to: {output_path}")
+            
+        except Exception as e:
+            print(f"  Could not save comparison: {str(e)}")
