@@ -1,4 +1,4 @@
-#test for complete pipeline preprocessing 
+import utils
 from utils.image_processor import ImageProcessor
 import os 
 
