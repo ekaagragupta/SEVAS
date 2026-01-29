@@ -13,14 +13,15 @@ class ImageProcessor:
         self.target_size = target_size
         print("ImageProcessor initialized with target size:", self.target_size)
 
-        def load_image(self,image_path):
+    def load_image(self,image_path):
             try:
                 if not os.path.exists(image_path):
                     print("File does not exist:", image_path)
                     return None
                 img = Image.open(image_path)
+                #converting to same format 
                 img=img.convert('RGB')
-                #image to numbers  conversion krega below line 
+                #image to numbers  conversion using numpy
                 img_array=np.array(img)
                 print("Image loaded : {img_array.shape}")
                 return img_array
