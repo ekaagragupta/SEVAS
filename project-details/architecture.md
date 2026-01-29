@@ -1,4 +1,4 @@
-## ** System Architecture (How It All Connects)**
+## ** System Architecture (How It All Connects : resal)**
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
