@@ -30,7 +30,7 @@ else:
         processor.save_preprocessed_comparison(
             test_image_path,
             preprocessed,
-            'ml-services/outputs/preprocessed_comparison.jpg'
+            'outputs/preprocessed_comparison.jpg'
         )
         
         print("\n" + "="*60)
