@@ -1,3 +1,6 @@
 {
-  "python.analysis.extraPaths": ["./ml-services"]
+  "python.analysis.extraPaths": [
+    "./ml-services",
+    "./ml-services"
+  ]
 }
