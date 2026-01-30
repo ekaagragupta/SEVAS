@@ -1,0 +1,10 @@
+SEVAS ML Model
+├──  Phase 1: Project Setup & Environment
+├──  Phase 2: Basic Flask Service
+├──  Phase 3: Image Preprocessing Pipeline
+├──  Phase 4: Advanced Preprocessing (NDVI, Cloud Removal)
+├──  Phase 5: Vision AI Integration (Gemini/OpenAI)
+├──  Phase 6: Custom U-Net Model (Detection)
+├──  Phase 7: LSTM Model (Prediction)
+├── Phase 8: Complete ML Service API
+└──  Phase 9: Testing & Integration
