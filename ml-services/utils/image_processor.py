@@ -3,6 +3,7 @@ import numpy as np
 #Opens JPG/PNG files
 from PIL import Image
 import os
+import cv2   
 
 #class to handle image processing 
 #basically photo editor before sending to AI model
