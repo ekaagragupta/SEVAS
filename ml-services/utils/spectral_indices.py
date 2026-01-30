@@ -99,7 +99,7 @@ class SpectralIndices:
             print(f" Error calculating NDWI: {str(e)}")
             return None
     
-    def visualise_index(self,index_array,output_path,index_name="Index",colormap=cv2.COLORMAP_JET):
+    def visualize_index(self,index_array,output_path,index_name="Index",colormap=cv2.COLORMAP_JET):
         try:
             ## NDVI/NDWI range: -1 to +1
                           # Image display range: 0 to 255
