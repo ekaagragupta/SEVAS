@@ -15,7 +15,7 @@ from utils.image_processor import ImageProcessor
 processor = ImageProcessor(target_size=256)
 
 # Path to test image
-test_image_path = 'ml-services/uploads/test_image.jpg'
+test_image_path = 'uploads/test_image.jpg'
 
 # Check if file exists
 if not os.path.exists(test_image_path):
