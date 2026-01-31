@@ -50,9 +50,9 @@ red_bright = [[False, True,  True ],
             cloud_mask = red_bright & green_bright & blue_bright
             cloud_mask=cloud_mask.astype(np.uint8)
             
-            total_pixels=cloud_mask.size
-            cloud_pixels=np.sum(cloud_mask)
-            cloud_percentage=float((cloud_pixels/total_pixels)*100)
+            total_pixels=int(cloud_mask.size)
+            cloud_pixels=int(np.sum(cloud_mask))
+            cloud_percentage=(cloud_pixels/total_pixels)*100.0
             
             print(f"cloud percentage: {cloud_percentage}%")
             print(f"total pixels: {total_pixels}, cloud pixels: {cloud_pixels} ")

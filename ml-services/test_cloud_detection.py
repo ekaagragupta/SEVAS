@@ -45,7 +45,7 @@ else:
                 print("\n" + "=" * 70)
                 print(" CLOUD DETECTION COMPLETE!")
                 print("\n Results:")
-                print(f"   Cloud coverage: {cloud_percentage:.2f}%")
+                print(f"   Cloud coverage: {cloud_percentage:}")
                 print(f"   Image usable: {'Yes ' if is_usable else 'No '}")
                 print("\n Generated file:")
                 print("   outputs/cloud_detection.png (clouds highlighted in red)")
