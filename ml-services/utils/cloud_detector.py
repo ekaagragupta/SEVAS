@@ -13,13 +13,14 @@ class CloudDetector:
     def detect_clouds(self,image):
         print("check point detecting clouds...")
         try:
+            img=image.copy()
             #checking image is in range 0-255
-            if image.max<=1.0:
-                image = (image * 255).astype(np.uint8)
-            if len(image.shape)==3:
-                red=image[:,:,2]
-                green=image[:,:,1]
-                blue=image[:,:,0]
+            if img.max()<=1.0:
+                img = (img * 255).astype(np.uint8)
+            if len(img.shape)==3:
+                red=img[:,:,2]
+                green=img[:,:,1]
+                blue=img[:,:,0]
             else:
                 print("check point image is not in expected format")
                 return None
@@ -66,6 +67,8 @@ red_bright = [[False, True,  True ],
             return cloud_percentage, cloud_mask
         except Exception as e:
             print(f"Error in cloud detection: {e}")
+            import traceback
+            traceback.print_exc()
             return None
         
     def visualize_clouds(self,image,cloud_mask,output_path):
@@ -94,7 +97,9 @@ red_bright = [[False, True,  True ],
             print(f"Error in visualizing clouds: {e}")  
             
     def is_image_usable(self,cloud_percentage):
-        usable = cloud_percentage < self.cloud_threshold_percent
+        if isinstance(cloud_percentage, np.ndarray):
+              cloud_percentage = float(cloud_percentage)
+        usable = float(cloud_percentage) < self.cloud_threshold_percent
         if usable:
             print("Image is usable for further processing.")
         else:
