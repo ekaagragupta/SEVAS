@@ -49,7 +49,7 @@ class SpectralIndices:
             return ndvi
             
         except Exception as e:
-            print(f"❌ Error calculating NDVI: {str(e)}")
+            print(f" Error calculating NDVI: {str(e)}")
             return None  
     
     def calculate_ndwi(self, image):
