@@ -69,13 +69,18 @@ red_bright = [[False, True,  True ],
             print(f"Error in cloud detection: {e}")
             import traceback
             traceback.print_exc()
-            return None
+            return None , 0.0
         
     def visualize_clouds(self,image,cloud_mask,output_path):
         try :
             print("check point visualizing clouds....")
             if image.max()<=1.0:
                 image = (image * 255).astype(np.uint8)
+                
+                #cloud mask 2d hona chahiye
+            if len(cloud_mask.shape) > 2:
+                cloud_mask = cloud_mask[:, :, 0]
+                
             vis_image=image.copy()
             
             # cloud mask =1 then highlight in red cloud areas
