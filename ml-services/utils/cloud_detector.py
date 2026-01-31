@@ -52,7 +52,7 @@ red_bright = [[False, True,  True ],
             
             total_pixels=cloud_mask.size
             cloud_pixels=np.sum(cloud_mask)
-            cloud_percentage=(cloud_pixels/total_pixels)*100
+            cloud_percentage=float((cloud_pixels/total_pixels)*100)
             
             print(f"cloud percentage: {cloud_percentage}%")
             print(f"total pixels: {total_pixels}, cloud pixels: {cloud_pixels} ")
@@ -99,7 +99,7 @@ red_bright = [[False, True,  True ],
     def is_image_usable(self,cloud_percentage):
         if isinstance(cloud_percentage, np.ndarray):
               cloud_percentage = float(cloud_percentage)
-        usable = cloud_percentage < self.cloud_threshold_percent
+        usable = float(cloud_percentage) < self.cloud_threshold_percent
         if usable:
             print("Image is usable for further processing.")
         else:
