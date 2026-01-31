@@ -96,12 +96,21 @@ red_bright = [[False, True,  True ],
         except Exception as e:
             print(f"Error in visualizing clouds: {e}")  
             
-    def is_image_usable(self,cloud_percentage):
-        if isinstance(cloud_percentage, np.ndarray):
-              cloud_percentage = float(cloud_percentage)
-        usable = float(cloud_percentage) < self.cloud_threshold_percent
+    def is_image_usable(self, cloud_percentage):
+        try:
+            if hasattr(cloud_percentage, 'item'):
+                cloud_pct = cloud_percentage.item()
+            else:
+                cloud_pct = float(cloud_percentage)
+        except (TypeError, ValueError, AttributeError) as e:
+            print(f"  Error converting cloud_percentage: {e}")
+            return False
+        
+        usable = cloud_pct < self.cloud_threshold_percent
+        
         if usable:
-            print("Image is usable for further processing.")
+            print(f" Image is USABLE (cloud coverage: {cloud_pct:.2f}%)")
         else:
-            print("Image is not usable due to high cloud coverage.")
+            print(f" Image is TOO CLOUDY (coverage: {cloud_pct:.2f}% > threshold: {self.cloud_threshold_percent}%)")
+        
         return usable

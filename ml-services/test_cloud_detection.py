@@ -36,7 +36,7 @@ else:
                 
                 # Visualize clouds
                 
-                cloud_detector.visualize_cloud_mask(
+                cloud_detector.visualize_clouds(
                     img_resized,
                     cloud_mask,
                     'outputs/cloud_detection.png'
