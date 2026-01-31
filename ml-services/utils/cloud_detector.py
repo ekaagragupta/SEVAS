@@ -68,4 +68,35 @@ red_bright = [[False, True,  True ],
             print(f"Error in cloud detection: {e}")
             return None
         
-        
+    def visualize_clouds(self,image,cloud_mask,output_path):
+        try :
+            print("check point visualizing clouds....")
+            if image.max()<=1.0:
+                image = (image * 255).astype(np.uint8)
+            vis_image=image.copy()
+            
+            # cloud mask =1 then highlight in red cloud areas
+            red_overlay= np.zeros_like(vis_image)
+            red_overlay[:,:,2]=255
+            # blending 70 % og image and 30% red overlay
+            
+            alpha=0.3
+            
+            cloud_mask_3d=np.stack([cloud_mask,cloud_mask,cloud_mask],axis=2)
+            vis_image=np.where(cloud_mask_3d==1
+                               , cv2.addWeighted(vis_image,1-alpha,red_overlay,alpha,0),
+                               vis_image)
+            
+            #save 
+            cv2.imwrite(output_path,vis_image)
+            print(f"Cloud visualization saved to {output_path}")
+        except Exception as e:
+            print(f"Error in visualizing clouds: {e}")  
+            
+    def is_image_usable(self,cloud_percentage):
+        usable = cloud_percentage < self.cloud_threshold_percent
+        if usable:
+            print("Image is usable for further processing.")
+        else:
+            print("Image is not usable due to high cloud coverage.")
+        return usable
