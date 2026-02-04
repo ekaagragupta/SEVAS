@@ -54,7 +54,7 @@ else:
         print(f"   Evidence found: {result.get('violations_detected', 'Unknown')}")
         print(f"   Confidence: {result.get('confidence', 'Unknown')}")
         
-        print(f"\n💬 AI Assessment:")
+        print(f"\n AI Assessment:")
         print("-" * 70)
         print(result.get('raw_response', 'No response'))
         print("-" * 70)
