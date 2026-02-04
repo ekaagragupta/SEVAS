@@ -22,8 +22,7 @@ class VisionAI:
         
         # Get API keys from environment
         self.gemini_key = os.getenv('GEMINI_API_KEY')
-        self.openai_key = os.getenv('OPENAI_API_KEY')
-        
+       
         # Configure Gemini
         if self.gemini_key and self.gemini_key != 'your_actual_gemini_key_here':
             genai.configure(api_key=self.gemini_key)
@@ -33,12 +32,7 @@ class VisionAI:
             self.gemini_model = None
             print(" Gemini API key not configured")
         
-        # OpenAI setup (optional)
-        if self.openai_key and self.openai_key != 'your_openai_key_if_you_have_one':
-            print("OpenAI Vision API configured")
-        else:
-            self.openai_key = None
-            print("OpenAI API key not configured (optional)")
+       
     
     def analyze_with_gemini(self, image_path, detection_type="general"):
         """
