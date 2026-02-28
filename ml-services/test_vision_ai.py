@@ -8,8 +8,9 @@ import os
 # Initialize
 vision_ai = VisionAI()
 
-
-test_image_path = 'uploads/test_image.jpg'
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+test_image_path = os.path.join(script_dir, 'uploads/test_image.jpg')
 
 if not os.path.exists(test_image_path):
     print(" Test image not found")

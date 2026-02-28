@@ -6,7 +6,7 @@ Integrates Gemini and OpenAI Vision APIs for image analysis
 import os
 import base64
 from dotenv import load_dotenv
-import google.generativeai as genai
+import google.genai as genai
 
 # Load environment variables
 load_dotenv()
@@ -25,11 +25,10 @@ class VisionAI:
        
         # Configure Gemini
         if self.gemini_key and self.gemini_key != 'your_actual_gemini_key_here':
-            genai.configure(api_key=self.gemini_key)
-            self.gemini_model = genai.GenerativeModel('gemini-1.5-flash')
+            self.client = genai.Client(api_key=self.gemini_key)
             print("Gemini Vision AI initialized")
         else:
-            self.gemini_model = None
+            self.client = None
             print(" Gemini API key not configured")
         
        
@@ -52,7 +51,7 @@ class VisionAI:
         print(f"\n🤖 Analyzing image with Gemini Vision AI...")
         print(f"   Detection type: {detection_type}")
         
-        if not self.gemini_model:
+        if not self.client:
             return {
                 "error": "Gemini API not configured",
                 "description": None
@@ -68,8 +67,22 @@ class VisionAI:
             
             print(f"   Sending request to Gemini...")
             
-            # Generate response
-            response = self.gemini_model.generate_content([prompt, img])
+            # Generate response with the new API
+            response = self.client.models.generate_content(
+                model="gemini-2.0-flash",
+                contents=[
+                    {
+                        "role": "user",
+                        "parts": [
+                            {"text": prompt},
+                            {"inline_data": {
+                                "mime_type": "image/jpeg",
+                                "data": base64.standard_b64encode(open(image_path, "rb").read()).decode("utf-8")
+                            }}
+                        ]
+                    }
+                ]
+            )
             
             # Parse response
             analysis = self._parse_gemini_response(response.text, detection_type)
