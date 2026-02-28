@@ -8,7 +8,7 @@ import os
 # Initialize
 vision_ai = VisionAI()
 
-# Test image
+
 test_image_path = 'uploads/test_image.jpg'
 
 if not os.path.exists(test_image_path):
