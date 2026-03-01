@@ -48,7 +48,7 @@ class VisionAI:
         Returns:
             dict: Analysis results with description, violations, confidence
         """
-        print(f"\n🤖 Analyzing image with Gemini Vision AI...")
+        print(f"\n Analyzing image with Gemini Vision AI...")
         print(f"   Detection type: {detection_type}")
         
         if not self.client:
@@ -69,7 +69,7 @@ class VisionAI:
             
             # Generate response with the new API
             response = self.client.models.generate_content(
-                model="gemini-2.0-flash",
+                model="gemini-1.5-flash",
                 contents=[
                     {
                         "role": "user",
