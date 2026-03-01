@@ -87,12 +87,12 @@ class VisionAI:
             # Parse response
             analysis = self._parse_gemini_response(response.text, detection_type)
             
-            print(f"✅ Analysis complete!")
+            print(f"Analysis complete!")
             
             return analysis
             
         except Exception as e:
-            print(f"❌ Error with Gemini API: {str(e)}")
+            print(f" Error with Gemini API: {str(e)}")
             return {
                 "error": str(e),
                 "description": None
