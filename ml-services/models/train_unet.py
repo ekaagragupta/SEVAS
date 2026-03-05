@@ -98,7 +98,7 @@ class UNetTrainer:
         self.unet.build_model()
         self.unet.compile_model(learning_rate=learning_rate)
         
-        print("\n📋 Model Architecture:")
+        print("\n Model Architecture:")
         print("="*70)
         
         # Count parameters

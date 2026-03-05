@@ -5,6 +5,7 @@ Creates synthetic training data and handles augmentation
 
 import numpy as np
 import cv2
+import tensorflow as tf
 from tensorflow import keras
 
 class SegmentationDataGenerator(keras.utils.Sequence):
