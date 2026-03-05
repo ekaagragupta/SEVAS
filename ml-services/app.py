@@ -499,3 +499,76 @@ if __name__ == '__main__':
    
     
     app.run(debug=True, port=5000, host='0.0.0.0')
+
+# U-NET SEGMENTATION ENDPOINT
+
+
+@app.route('/api/segment', methods=['POST'])
+def segment_image():
+    """
+    U-Net segmentation endpoint
+    
+    Request:
+        - file: Image file
+    
+    Response:
+        - segmentation_mask: URL to segmentation result
+        - analysis: Pixel-wise analysis
+        - violations: Detected violations
+    """
+    print("\n" + "="*70)
+    print(" U-NET SEGMENTATION REQUEST")
+    print("="*70)
+    
+    if 'file' not in request.files:
+        return jsonify({"status": "error", "message": "No file provided"}), 400
+    
+    file = request.files['file']
+    
+    if file.filename == '' or not allowed_file(file.filename):
+        return jsonify({"status": "error", "message": "Invalid file"}), 400
+    
+    try:
+        # Save file
+        filename = secure_filename(file.filename)
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        saved_filename = f"segment_{timestamp}_{filename}"
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], saved_filename)
+        file.save(filepath)
+        
+        # Try to load U-Net model and predict
+        try:
+            from models.predict_unet import UNetPredictor
+            
+            predictor = UNetPredictor('models/saved_models/unet_best.h5')
+            image, mask, confidence = predictor.predict_image(filepath)
+            
+            # Save visualization
+            output_filename = f"segmentation_{timestamp}.png"
+            output_path = os.path.join(app.config['OUTPUT_FOLDER'], output_filename)
+            
+            predictor.visualize_prediction(image, mask, confidence, save_path=output_path)
+            
+            # Analyze
+            analysis = predictor.analyze_prediction(mask)
+            
+            result = {
+                "status": "success",
+                "segmentation_image": output_filename,
+                "analysis": analysis,
+                "timestamp": datetime.now().isoformat()
+            }
+            
+            print(" Segmentation complete!")
+            
+            return jsonify(result), 200
+            
+        except FileNotFoundError:
+            return jsonify({
+                "status": "error",
+                "message": "U-Net model not found. Train the model first."
+            }), 404
+            
+    except Exception as e:
+        print(f" Error: {str(e)}")
+        return jsonify({"status": "error", "message": str(e)}), 500
