@@ -195,7 +195,7 @@ class UNetTrainer:
             print("  No training history available")
             return
         
-        fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+        fig, axes = plt.subplots(1, 2, figsize=(14, 5))
         
         # Plot loss
         axes[0].plot(self.history.history['loss'], label='Train Loss')
@@ -214,15 +214,6 @@ class UNetTrainer:
         axes[1].set_ylabel('Accuracy')
         axes[1].legend()
         axes[1].grid(True, alpha=0.3)
-        
-        # Plot IoU
-        axes[2].plot(self.history.history['mean_io_u'], label='Train IoU')
-        axes[2].plot(self.history.history['val_mean_io_u'], label='Val IoU')
-        axes[2].set_title('Mean IoU Score', fontsize=14, fontweight='bold')
-        axes[2].set_xlabel('Epoch')
-        axes[2].set_ylabel('IoU')
-        axes[2].legend()
-        axes[2].grid(True, alpha=0.3)
         
         plt.tight_layout()
         
@@ -254,7 +245,6 @@ class UNetTrainer:
         print("="*70)
         print(f"Loss: {results[0]:.4f}")
         print(f"Accuracy: {results[1]:.4f}")
-        print(f"Mean IoU: {results[2]:.4f}")
         print("="*70)
         
         return results

@@ -197,16 +197,13 @@ class UNetModel:
         self.model.compile(
             optimizer=keras.optimizers.Adam(learning_rate=learning_rate),
             loss='sparse_categorical_crossentropy',  # For integer labels
-            metrics=[
-                'accuracy',
-                keras.metrics.MeanIoU(num_classes=self.num_classes)
-            ]
+            metrics=['accuracy']
         )
         
         print("Model compiled successfully!")
         print(f"   Optimizer: Adam (lr={learning_rate})")
         print(f"   Loss: Sparse Categorical Crossentropy")
-        print(f"   Metrics: Accuracy, Mean IoU")
+        print(f"   Metrics: Accuracy")
     
     def summary(self):
         """Print model architecture summary"""
