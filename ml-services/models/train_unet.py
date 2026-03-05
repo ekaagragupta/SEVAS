@@ -6,7 +6,7 @@ Trains the segmentation model on satellite imagery
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-from tensorflow import keras
+import keras
 from datetime import datetime
 
 from unet_model import UNetModel
