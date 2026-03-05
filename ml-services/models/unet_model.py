@@ -40,7 +40,7 @@ class UNetModel:
         self.num_classes = num_classes
         self.model = None
         
-        print(f"✅ U-Net Model initialized")
+        print(f" U-Net Model initialized")
         print(f"   Input shape: {input_shape}")
         print(f"   Classes: {num_classes}")
     
@@ -71,7 +71,7 @@ class UNetModel:
         Output (256x256x4)
         """
         
-        print("\n🏗️  Building U-Net architecture...")
+        print("\n  Building U-Net architecture...")
         
         inputs = keras.Input(shape=self.input_shape)
         
@@ -140,7 +140,7 @@ class UNetModel:
         # Create model
         self.model = keras.Model(inputs=inputs, outputs=outputs, name='UNet')
         
-        print("✅ U-Net architecture built successfully!")
+        print(" U-Net architecture built successfully!")
         print(f"   Total layers: {len(self.model.layers)}")
         
         return self.model
@@ -191,7 +191,7 @@ class UNetModel:
             learning_rate: Learning rate for Adam optimizer
         """
         if self.model is None:
-            print("⚠️  Build model first using build_model()")
+            print("  Build model first using build_model()")
             return
         
         self.model.compile(
@@ -203,7 +203,7 @@ class UNetModel:
             ]
         )
         
-        print("✅ Model compiled successfully!")
+        print("Model compiled successfully!")
         print(f"   Optimizer: Adam (lr={learning_rate})")
         print(f"   Loss: Sparse Categorical Crossentropy")
         print(f"   Metrics: Accuracy, Mean IoU")
@@ -211,7 +211,7 @@ class UNetModel:
     def summary(self):
         """Print model architecture summary"""
         if self.model is None:
-            print("⚠️  Build model first using build_model()")
+            print(" Build model first using build_model()")
             return
         
         self.model.summary()
@@ -228,11 +228,11 @@ class UNetModel:
             filepath: Path to save model (e.g., 'models/unet_trained.h5')
         """
         if self.model is None:
-            print("⚠️  No model to save")
+            print("  No model to save")
             return
         
         self.model.save(filepath)
-        print(f"✅ Model saved to: {filepath}")
+        print(f"Model saved to: {filepath}")
     
     def load_model(self, filepath):
         """
@@ -242,7 +242,7 @@ class UNetModel:
             filepath: Path to model file
         """
         self.model = keras.models.load_model(filepath)
-        print(f"✅ Model loaded from: {filepath}")
+        print(f" Model loaded from: {filepath}")
     
     def predict(self, image):
         """
@@ -255,7 +255,7 @@ class UNetModel:
             Segmentation mask (256, 256) with class labels
         """
         if self.model is None:
-            print("⚠️  Build/load model first")
+            print("  Build/load model first")
             return None
         
         # Add batch dimension if needed
