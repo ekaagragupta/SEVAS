@@ -1,4 +1,4 @@
-Phase : Vision AI Integration
+Phase : Vision AI Integratio
 ├── Gemini Vision API wrapper
 ├── OpenAI GPT-4 Vision API wrapper
 ├── Prompt engineering for detection
