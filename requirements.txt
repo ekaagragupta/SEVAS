@@ -23,4 +23,4 @@ python-dotenv==1.0.0        # Load environment variables
 requests==2.31.0            # HTTP requests
 geopy==2.4.1                # GPS coordinate handling
 matplotlib==3.8.2           # Visualization (for debugging)
-pandas==2.2.1               # Data manipulation and analysis
+pandas==2.2.1               # Data manipulation 
