@@ -19,8 +19,7 @@ build/
 *.onnx
 
 # Data
-uploads/
-outputs/
+
 data/synthetic/images/
 data/synthetic/masks/
 
