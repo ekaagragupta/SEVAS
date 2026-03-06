@@ -60,28 +60,6 @@
 
 ---
 
-## 📁 Project Structure
-```
-SEVAS/ml-services/
-├── models/
-│   ├── vision_ai.py          # Gemini Vision AI integration
-│   └── vision_ai_mock.py     # Mock for testing
-│
-├── utils/
-│   ├── image_processor.py    # Image preprocessing pipeline
-│   ├── spectral_indices.py   # NDVI/NDWI calculations
-│   ├── cloud_detector.py     # Cloud detection & filtering
-│   └── change_detector.py    # Temporal change detection
-│
-├── uploads/                   # User uploaded images
-├── outputs/                   # Processed results
-├── app.py                     # Main Flask API
-├── requirements.txt           # Dependencies
-└── .env                       # API keys & config
-```
-
----
-
 ## 🚀 API Endpoints
 
 ### **Core Analysis**
@@ -195,7 +173,6 @@ SEVAS/ml-services/
 
 ---
 
-## 🎓 Learning Outcomes
 
 ### **Skills Demonstrated:**
 
@@ -253,35 +230,6 @@ SEVAS/ml-services/
 
 ---
 
-## 🚀 Future Enhancements (Roadmap)
-
-### **Phase 7: Custom Deep Learning Models** (Optional)
-- [ ] U-Net architecture for precise segmentation
-- [ ] LSTM for temporal prediction
-- [ ] Model training pipeline
-- [ ] Transfer learning implementation
-
-### **Phase 8: Frontend Dashboard**
-- [ ] Next.js web interface
-- [ ] Interactive map visualization
-- [ ] Real-time analysis display
-- [ ] Report download functionality
-
-### **Phase 9: Deployment**
-- [ ] Docker containerization
-- [ ] Cloud deployment (AWS/GCP)
-- [ ] CI/CD pipeline
-- [ ] Production monitoring
-
-### **Additional Features:**
-- [ ] Real-time satellite data integration (Sentinel API)
-- [ ] Multi-user authentication
-- [ ] Database integration (PostgreSQL/MongoDB)
-- [ ] Automated report generation (PDF)
-- [ ] Email/SMS alerts for violations
-- [ ] Mobile app (React Native)
-
----
 
 ## 📝 How to Run
 
@@ -316,51 +264,8 @@ python test_api.py
 
 ---
 
-## 📚 Documentation
-
-### **API Documentation:**
-See `API_DOCUMENTATION.md` for complete endpoint reference
-
-### **Technical Details:**
-See `TECHNICAL_DETAILS.md` for architecture deep-dive
-
-### **Testing:**
-See `TESTING_GUIDE.md` for comprehensive testing instructions
-
----
-
-## 🏆 Resume Highlights
-
-### **Project Title for Resume:**
-**SEVAS: Predictive Environmental Enforcement Platform**  
-*Multi-temporal satellite analysis system with LSTM-driven predictive intelligence and cross-border network detection*
-
-### **Key Bullet Points:**
-- Developed predictive environmental monitoring system using LSTM temporal analysis, achieving 78% accuracy in forecasting violations 2-3 weeks in advance
-- Engineered intelligent triage system processing 1000+ daily violations, reducing enforcement workload by 85% through ML-based severity scoring
-- Built complete REST API handling 50MB+ satellite images with Vision AI integration, generating court-ready forensic reports
-- Implemented multi-spectral analysis pipeline (NDVI, NDWI) for vegetation health and water body detection across 500+ sq km areas
-- Created hybrid AI architecture combining custom CNNs, Vision transformers, and geospatial analysis for environmental crime detection
-
-### **Technologies:**
-Python, TensorFlow, Keras, Flask, OpenCV, Gemini Vision API, NumPy, scikit-learn, REST APIs, Docker-ready, CORS, Geospatial Analysis
-
----
-
-## 📞 Contact & Links
-
-**GitHub:** [Your Repository Link]  
-**Demo:** [Deployed URL when available]  
-**Documentation:** See /docs folder
-
----
-
-## 📄 License
-
-[Your License Choice - e.g., MIT]
-
----
 
 **Built with ❤️ for environmental protection**  
 **Version:** 1.0.0  
 **Last Updated:** March 2026
+
