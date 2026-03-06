@@ -20,7 +20,7 @@ print("\n" + "="*70)
 print("\n Creating synthetic dataset...")
 data_dir = create_synthetic_dataset(num_samples=50, output_dir='data/synthetic')
 
-# Initialize trainer
+
 trainer = UNetTrainer()
 
 # Prepare data
