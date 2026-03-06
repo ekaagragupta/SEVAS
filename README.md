@@ -46,6 +46,46 @@
 - Achieves **73% segmentation accuracy** on validation data
 
 ---
+## 🚀 Demo
+
+### Sample Detection Results
+
+#### Sand Mining Detection
+```
+Input: Satellite image of riverbed
+Output:
+  ✅ Violation detected: Yes
+  📍 Location: Northeastern riverbank section
+  📏 Affected area: ~2.3 hectares
+  ⚠️  Severity: High
+  🎯 Confidence: 87%
+  💡 Recommendation: Immediate field verification required
+```
+#### U-Net Segmentation Output
+
+![U-Net Segmentation](ml-services/outputs/unet_prediction_sample.png)
+
+*Pixel-level classification showing mining areas (red), vegetation (green), water bodies (blue)*
+
+#### Training Performance
+
+![Training Curves](ml-services/outputs/unet_training_simple.png)
+
+*Model achieved 73% accuracy after 20 epochs*
+
+#### System Architecture
+
+![Architecture](ml-services/outputs/architecture_diagram.png)
+
+*Complete system architecture showing data flow*
+
+#### ML Pipeline
+
+![ML Pipeline](ml-services/outputs/ml_pipeline.png)
+
+*End-to-end machine learning processing pipeline*
+
+---
 
 ## ✨ Features
 
@@ -176,36 +216,6 @@ Input Image (Satellite/Drone)
          └─ Recommendations
 ```
 
----
-## 🚀 Demo
-
-### Sample Detection Results
-
-#### Sand Mining Detection
-```
-Input: Satellite image of riverbed
-Output:
-  ✅ Violation detected: Yes
-  📍 Location: Northeastern riverbank section
-  📏 Affected area: ~2.3 hectares
-  ⚠️  Severity: High
-  🎯 Confidence: 87%
-  💡 Recommendation: Immediate field verification required
-```
-
-#### U-Net Segmentation Output
-
-![U-Net Segmentation](outputs/unet_prediction_sample.png)
-
-*Pixel-level classification showing mining areas (red), vegetation (green), water bodies (blue)*
-
-#### Training Performance
-
-![Training Curves](outputs/unet_training_simple.png)
-
-*Model achieved 73% accuracy after 20 epochs*
-
----
 
 ## 🛠️ Tech Stack
 
