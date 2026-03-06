@@ -30,7 +30,7 @@ train_gen, val_gen = trainer.prepare_data(data_dir, train_split=0.8)
 trainer.build_and_compile(learning_rate=0.001)
 
 # Quick training (just 10 epochs for demo)
-print("\n🚀 Starting quick training (10 epochs)...")
+print("\n Starting quick training (10 epochs)...")
 print("   For real training, use 50-100 epochs")
 
 history = trainer.train(train_gen, val_gen, epochs=10)
