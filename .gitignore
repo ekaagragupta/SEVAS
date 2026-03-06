@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+*.egg-info/
+dist/
+build/
+
+# Model files (too large for regular git)
+*.h5
+*.pkl
+*.pth
+*.pt
+*.onnx
+
+# Data
+uploads/
+outputs/
+data/synthetic/images/
+data/synthetic/masks/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
