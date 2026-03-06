@@ -487,7 +487,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 
-- GitHub: [@ekaagragupta](https://github.com/ekagragupta)
+- GitHub: [@ekaagragupta](https://github.com/ekaagragupta)
 - LinkedIn: [@ekaagragupta](https://linkedin.com/in/ekaagragupta)
 - Email: ekaagrag2006@gmail.com
 
