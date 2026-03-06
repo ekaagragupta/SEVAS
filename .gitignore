@@ -19,7 +19,7 @@ build/
 *.onnx
 
 # Data
-
+uploads/
 data/synthetic/images/
 data/synthetic/masks/
 
