@@ -40,7 +40,7 @@ class LSTMTemporalPredictor:
         self.image_shape = image_shape
         self.model = None
         
-        print(f"✅ LSTM Temporal Predictor initialized")
+        print(f"LSTM Temporal Predictor initialized")
         print(f"   Sequence length: {sequence_length} time steps")
         print(f"   Image shape: {image_shape}")
     
@@ -54,7 +54,7 @@ class LSTMTemporalPredictor:
         3. Dense layers for prediction
         """
         
-        print("\n🏗️  Building LSTM temporal model...")
+        print("\nBuilding LSTM temporal model...")
         
         # Input: Sequence of images
         inputs = keras.Input(shape=(self.sequence_length, *self.image_shape))
@@ -133,7 +133,7 @@ class LSTMTemporalPredictor:
             name='LSTM_Temporal_Predictor'
         )
         
-        print("✅ LSTM temporal model built!")
+        print("LSTM temporal model built!")
         
         total_params = self.model.count_params()
         print(f"   Total parameters: {total_params:,}")
@@ -148,7 +148,7 @@ class LSTMTemporalPredictor:
             learning_rate: Learning rate for optimizer
         """
         if self.model is None:
-            print("⚠️  Build model first")
+            print("Build model first")
             return
         
         self.model.compile(
@@ -170,7 +170,7 @@ class LSTMTemporalPredictor:
             }
         )
         
-        print("✅ Model compiled!")
+        print("Model compiled!")
         print("   Multi-output configuration:")
         print("   - Violation probability (binary)")
         print("   - Severity score (regression)")
@@ -187,7 +187,7 @@ class LSTMTemporalPredictor:
             Dictionary with predictions
         """
         if self.model is None:
-            print("⚠️  No model loaded")
+            print("No model loaded")
             return None
         
         # Ensure correct shape
@@ -228,12 +228,12 @@ class LSTMTemporalPredictor:
         """Save model"""
         if self.model:
             self.model.save(filepath)
-            print(f"✅ Model saved to: {filepath}")
+            print(f"Model saved to: {filepath}")
     
     def load_model(self, filepath):
         """Load model"""
         self.model = keras.models.load_model(filepath)
-        print(f"✅ Model loaded from: {filepath}")
+        print(f"Model loaded from: {filepath}")
 
 
 def create_synthetic_temporal_data(num_sequences=50, sequence_length=5):
@@ -253,7 +253,7 @@ def create_synthetic_temporal_data(num_sequences=50, sequence_length=5):
         X: Image sequences (num_sequences, sequence_length, H, W, 3)
         y: Labels dictionary
     """
-    print(f"\n📊 Creating {num_sequences} temporal sequences...")
+    print(f"\nCreating {num_sequences} temporal sequences...")
     
     X = []
     y_violation = []
@@ -312,7 +312,7 @@ def create_synthetic_temporal_data(num_sequences=50, sequence_length=5):
         'violation_type': np.array(y_type, dtype=np.int32)
     }
     
-    print(f"✅ Created temporal sequences")
+    print(f"Created temporal sequences")
     print(f"   Shape: {X.shape}")
     print(f"   Violation rate: {np.mean(y_violation)*100:.1f}%")
     
